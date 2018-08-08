@@ -28,7 +28,7 @@ public class LoggingAdvice extends HandlerInterceptorAdapter {
         return super.preHandle(request, response, handler);
     }
 
-    @Before("execution(* com.widetns..*.*(..))")
+    @Before("execution(* com.widetns.test..*.*(..))")
     private void loggingParameters(JoinPoint point) {
         Object[] objs = point.getArgs();
 
@@ -56,7 +56,7 @@ public class LoggingAdvice extends HandlerInterceptorAdapter {
         }
     }
 
-    @Around("execution(* com.widetns..*.*(..))")
+    @Around("execution(* com.widetns.test..*.*(..))")
     public Object loggingExcutionTime(ProceedingJoinPoint point) throws Throwable {
 
         Object obj;
